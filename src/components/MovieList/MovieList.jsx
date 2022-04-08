@@ -11,7 +11,7 @@ function MovieList() {
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
-console.log(movies[0]);
+
     return (
         <main>
             <h1>MovieList</h1>
