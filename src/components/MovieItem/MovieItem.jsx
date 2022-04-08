@@ -8,7 +8,7 @@ function MovieItem({ movie }) {
 
     const handleDetailView = () => {
         console.log('clicked into HandleDetailView');
-        dispatch ({type: 'VIEW_DETAIL', payload: movie.id})
+        dispatch ({type: 'FETCH_DETAIL', payload: movie.id})
         // history.push('/details'); put in saga?
     }
 
