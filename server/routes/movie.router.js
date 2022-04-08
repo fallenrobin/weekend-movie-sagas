@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
 
 });
 
+//GET route for just one movie, triggered by click on movie poster
 router.get('/:id', (req, res) => {
 
   const query = `

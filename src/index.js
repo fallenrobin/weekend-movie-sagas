@@ -37,8 +37,9 @@ function* fetchDetail(action) {
     const id = action.payload;
     try {
         const oneMovie = yield axios.get(`/api/movie/${id}`)
-
+        const genres = yield axios.get(`/api/genre/${id}`)
         yield put({ type: 'SET_DETAIL', payload: oneMovie }); //gets back 200 status
+        yield put({ type: 'SET_GENRES', payload: genres }); //gets back 200 status
 
     } catch {
         console.log('viewDetail error');
@@ -53,6 +54,7 @@ const sagaMiddleware = createSagaMiddleware();
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
+            // console.log('in movies reducer', action.payload);
             return action.payload;
         default:
             return state;
@@ -62,8 +64,8 @@ const movies = (state = [], action) => {
 const singleMovie = (state = [], action) => {
     switch (action.type) {
         case 'SET_DETAIL':
-            console.log(`in singleMovie reducer ${action.payload}`);
-            return action.payload; 
+            console.log(`in singleMovie reducer ${action.payload.data[0]}`);
+            return action.payload.data[0]; 
         default:
             return state;
     }
@@ -73,7 +75,8 @@ const singleMovie = (state = [], action) => {
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
-            return action.payload;
+            console.log('in genres reducer', action.payload);
+            return action.payload.data[0];
         default:
             return state;
     }

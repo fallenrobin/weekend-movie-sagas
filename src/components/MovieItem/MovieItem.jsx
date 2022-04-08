@@ -9,7 +9,7 @@ function MovieItem({ movie }) {
     const handleDetailView = () => {
         console.log('clicked into HandleDetailView');
         dispatch ({type: 'FETCH_DETAIL', payload: movie.id})
-        // history.push('/details'); put in saga?
+        history.push('/details'); 
     }
 
     return (
@@ -17,9 +17,8 @@ function MovieItem({ movie }) {
             <div key={movie.id} >
                 <h3>{movie.title}</h3>
 
-                <img
-                    onClick={handleDetailView}
-                    src={movie.poster} alt={movie.title} />
+                <img onClick={handleDetailView} 
+                src={movie.poster} alt={movie.title} />
             </div>
         </>
     )
