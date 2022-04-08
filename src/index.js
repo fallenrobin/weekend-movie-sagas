@@ -14,6 +14,8 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+    yield takeEvery('VIEW_DETAIL', viewDetail);
+
 }
 
 function* fetchAllMovies() {
@@ -26,7 +28,22 @@ function* fetchAllMovies() {
     } catch {
         console.log('get all error');
     }
+
+}
+
+// get ONE movie from reducer
+function* viewDetail(action) {
+    // console.log(action.payload);
+    const id = action.payload;
+    try {
+        const oneMovie = yield axios.get(`/api/movie/${id}`)
         
+        yield put({ type: 'SET_DETAIL', payload: oneMovie }); //gets back 200 status
+
+    } catch {
+        console.log('viewDetail error');
+    }
+
 }
 
 // Create sagaMiddleware
@@ -37,6 +54,8 @@ const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;
+        // case 'SET_DETAIL':
+        //     return action.payload; //sends it to .map in movie list and breaks it
         default:
             return state;
     }
@@ -68,7 +87,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

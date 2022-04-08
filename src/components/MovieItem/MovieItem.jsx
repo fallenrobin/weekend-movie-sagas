@@ -5,10 +5,11 @@ function MovieItem({ movie }) {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    
+
     const handleDetailView = () => {
         console.log('clicked into HandleDetailView');
-        history.push('/details');
+        dispatch ({type: 'VIEW_DETAIL', payload: movie.id})
+        // history.push('/details'); put in saga?
     }
 
     return (
