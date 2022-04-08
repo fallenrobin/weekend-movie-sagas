@@ -11,15 +11,17 @@ function MovieList() {
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
-
+console.log(movies[0]);
     return (
         <main>
             <h1>MovieList</h1>
             <section className="movies">
-                {movies.map(movie => {
+                {movies.map((movie, i) => {
                     return (
-                        <MovieItem movie = {movie}/>
-                    );
+                        <MovieItem
+                            id={i}
+                            movie={movie}
+                        />);
                 })}
             </section>
         </main>
