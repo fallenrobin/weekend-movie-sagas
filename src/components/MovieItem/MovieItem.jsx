@@ -9,10 +9,30 @@ import CardContent from '@material-ui/core/CardContent';
 //grid for centering
 import Grid from '@material-ui/core/Grid';
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            '& > *': {
+                margin: theme.spacing(1),
+            },
+            minWidth: 275,//card
+            maxWidth: 400,
+        },
+        title: {
+            fontSize: 14,
+        },
+        pos: {
+            marginBottom: 12,
+        },
+    }),
+);
+
 function MovieItem({ movie }) {
 
     const dispatch = useDispatch();
     const history = useHistory();
+    const classes = useStyles(); //for card
+
 
     const handleDetailView = () => {
         console.log('clicked into HandleDetailView');
