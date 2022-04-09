@@ -1,5 +1,6 @@
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import GenreItem from '../App/GenreItem/GenreItem';
 
 function MovieDetail() {
 
@@ -19,7 +20,15 @@ function MovieDetail() {
 
                 <img src={singleMovie.poster} alt={singleMovie.title} />
                 <p>{singleMovie.description}</p>
-                <p>Genres:{genres.name}</p>
+                <p>Genres: </p>
+                {genres.map((genre, i) => {
+                    return (
+                        <GenreItem
+                            id={i}
+                            genre={genre}
+                        />);
+                })}
+                
             </div>
         </>
 

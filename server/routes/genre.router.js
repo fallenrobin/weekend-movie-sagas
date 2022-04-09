@@ -14,6 +14,8 @@ router.get('/:id', (req, res) => {
 
   pool.query(query, [req.params.id])
     .then(result => {
+      console.log('in genre ROUTER', result.rows);
+      
       res.send(result.rows);
     })
     .catch(err => {

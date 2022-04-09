@@ -75,8 +75,8 @@ const singleMovie = (state = [], action) => {
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
-            console.log('in genres reducer', action.payload);
-            return action.payload.data[0];
+            console.log('in genres reducer', action.payload.data);
+            return action.payload.data;
         default:
             return state;
     }
