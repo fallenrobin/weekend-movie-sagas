@@ -12,6 +12,7 @@
   color: white;
 }
 
+/* Resource: https://fossheim.io/writing/posts/css-text-gradient/ */
 .header {
   font-family: 'Press Start 2P', cursive;
   background: #CA4246;
@@ -43,7 +44,7 @@
 
 /* Add animation on hover. */
 .header:hover {
-  animation: rainbow-text-animation 3s ease forwards;
+  animation: rainbow-text-animation 5s ease forwards;
 }
 
 /* Move the background and make it larger. */

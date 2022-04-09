@@ -11,6 +11,8 @@ import CardContent from '@material-ui/core/CardContent';
 //grid for centering
 import Grid from '@material-ui/core/Grid';
 import { ClassNames } from '@emotion/react';
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -26,38 +28,47 @@ function MovieDetail() {
     const singleMovie = (useSelector(store => store.singleMovie))
     const genres = (useSelector(store => store.genres))
     const history = useHistory();
+
     console.log('in details page', singleMovie);
 
 
     return (
 
         <>
-            <Grid item xs={0}
+            <Grid
+                align="center"
                 container
                 direction="column"
                 alignItems="center"
-                // justify="center"
-                >
-                <Card className={ClassNames.root} variant="outlined">
-                    <h1>Movie details</h1>
-                    <button onClick={() => { history.push('/') }}>Return to list</button>
+                justify="center"
+            >
+                <Grid item xs={8}>
+                    <Card className={ClassNames.root} variant="outlined">
+                        <CardContent>
 
-                    <div key={singleMovie.id} >
-                        <h3>{singleMovie.title}</h3>
+                            <div key={singleMovie.id} >
+                                <Typography variant="h4">
+                                    <h3>{singleMovie.title}</h3>
+                                </Typography >
+                                <img className="detailImg" src={singleMovie.poster} alt={singleMovie.title} />
 
-                        <img className="detailImg" src={singleMovie.poster} alt={singleMovie.title} />
-                        <p>{singleMovie.description}</p>
-                        <p>Genres: </p>
-                        {genres.map((genre, i) => {
-                            return (
-                                <GenreItem
-                                    id={i}
-                                    genre={genre}
-                                />);
-                        })}
+                                <Typography variant="h5">
+                                    <p className="descriptionText">{singleMovie.description}</p>
+                                </Typography>
+                                <p>Genres: </p>
+                                {genres.map((genre, i) => {
+                                    return (
+                                        <GenreItem
+                                            id={i}
+                                            genre={genre}
+                                        />);
+                                })}
 
-                    </div>
-                </Card>
+                            </div>
+                            <Button variant="contained" onClick={() => { history.push('/') }}>Return to list</Button>
+                        </CardContent>
+                    </Card>
+                </Grid>
             </Grid>
         </>
 
