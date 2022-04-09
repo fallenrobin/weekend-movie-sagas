@@ -2,6 +2,7 @@ import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 //MUI for card
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@mui/material/Typography';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -53,22 +54,23 @@ function MovieItem({ movie }) {
                 <Card className={classes.root} variant="outlined">
                     <CardContent>
                         <Typography variant="h5" component="h2">
-                            Thanks for your feedback!
+                        <p key={movie.id} >
+                        <h3>{movie.title}</h3></p>
+
                         </Typography>
 
                     </CardContent>
 
 
-                    <>
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
+                    <CardActions style={{ justifyContent: 'center' }}>
 
-                            <img onClick={handleDetailView}
-                                src={movie.poster} alt={movie.title} />
-                        </div>
-                    </>
-                </Card>
-            </Grid>
+                    
+                        <img onClick={handleDetailView}
+                            src={movie.poster} alt={movie.title} />
+                    
+                </CardActions>
+            </Card>
+        </Grid>
         </Grid >
     )
 }
