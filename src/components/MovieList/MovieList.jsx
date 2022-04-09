@@ -17,7 +17,7 @@ function MovieList() {
 
     return (
         <main>
-            <h2 className="header" >Now Available for You to Click</h2>
+            <h3 className="header" >Now Available for You to Click</h3>
             <section className="movies">
                 <Grid
                     container
