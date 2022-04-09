@@ -18,12 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
             },
             minWidth: 275,//card
             maxWidth: 400,
-        },
-        title: {
-            fontSize: 14,
-        },
-        pos: {
-            marginBottom: 12,
+            height: 625
         },
     }),
 );
@@ -42,15 +37,15 @@ function MovieItem({ movie }) {
     }
 
     return (
-        <Grid
-            container
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            // justify="center" //better without; this puts in very center of page
-            style={{ minHeight: '100vh' }}
-        >
-            <Grid item xs={6}>
+        // <Grid
+        //     container
+        //     spacing={0}
+        //     direction="row"
+        //     alignItems="flex-start"
+        //     justify="space-between" 
+        //     style={{ minHeight: '100vh' }}>
+        <>
+            <Grid item xs={3}>
                 <Card className={classes.root} variant="outlined">
                     <CardContent>
                         <Typography variant="h5" component="h2">
@@ -71,7 +66,8 @@ function MovieItem({ movie }) {
                 </CardActions>
             </Card>
         </Grid>
-        </Grid >
+       </>
+        // </Grid >
     )
 }
 

@@ -8,3 +8,8 @@ body {
   background-color: black;
   color:aliceblue;
 }
+
+img {
+  width: 50em;
+  /* height 80%; */
+}
