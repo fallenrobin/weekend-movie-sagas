@@ -37,20 +37,14 @@ function MovieItem({ movie }) {
     }
 
     return (
-        // <Grid
-        //     container
-        //     spacing={0}
-        //     direction="row"
-        //     alignItems="flex-start"
-        //     justify="space-between" 
-        //     style={{ minHeight: '100vh' }}>
+        
         <>
             <Grid item xs={3}>
                 <Card className={classes.root} variant="outlined">
                     <CardContent>
-                        <Typography variant="h5" component="h2">
+                        <Typography>
                         <p key={movie.id} >
-                        <h3>{movie.title}</h3></p>
+                        <h2>{movie.title}</h2></p>
 
                         </Typography>
 
@@ -67,7 +61,6 @@ function MovieItem({ movie }) {
             </Card>
         </Grid>
        </>
-        // </Grid >
     )
 }
 

@@ -10,21 +10,13 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 //grid for centering
 import Grid from '@material-ui/core/Grid';
+import { ClassNames } from '@emotion/react';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            '& > *': {
-                margin: theme.spacing(1),
-            },
-            minWidth: 275,//card
-            maxWidth: 400,
-        },
-        title: {
-            fontSize: 14,
-        },
-        pos: {
-            marginBottom: 12,
+            width: 100,
+            height: 200,
         },
     }),
 );
@@ -36,27 +28,37 @@ function MovieDetail() {
     const history = useHistory();
     console.log('in details page', singleMovie);
 
+
     return (
 
         <>
-            <h1>Movie details</h1>
-            <button onClick={() => { history.push('/') }}>Return to list</button>
+            <Grid item xs={0}
+                container
+                direction="column"
+                alignItems="center"
+                // justify="center"
+                >
+                <Card className={ClassNames.root} variant="outlined">
+                    <h1>Movie details</h1>
+                    <button onClick={() => { history.push('/') }}>Return to list</button>
 
-            <div key={singleMovie.id} >
-                <h3>{singleMovie.title}</h3>
+                    <div key={singleMovie.id} >
+                        <h3>{singleMovie.title}</h3>
 
-                <img src={singleMovie.poster} alt={singleMovie.title} />
-                <p>{singleMovie.description}</p>
-                <p>Genres: </p>
-                {genres.map((genre, i) => {
-                    return (
-                        <GenreItem
-                            id={i}
-                            genre={genre}
-                        />);
-                })}
-                
-            </div>
+                        <img className="detailImg" src={singleMovie.poster} alt={singleMovie.title} />
+                        <p>{singleMovie.description}</p>
+                        <p>Genres: </p>
+                        {genres.map((genre, i) => {
+                            return (
+                                <GenreItem
+                                    id={i}
+                                    genre={genre}
+                                />);
+                        })}
+
+                    </div>
+                </Card>
+            </Grid>
         </>
 
     )
