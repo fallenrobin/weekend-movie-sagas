@@ -10,19 +10,21 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
+import '@fontsource/roboto'; 
+
+
 
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_DETAIL', fetchDetail);
-
 }
 
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie');
-        console.log('get all:', movies.data);
+        // console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
     } catch {
@@ -31,7 +33,7 @@ function* fetchAllMovies() {
 
 }
 
-// get ONE movie from reducer
+// get details of ONE movie from the database AND its genre info
 function* fetchDetail(action) {
     // console.log(action.payload);
     const id = action.payload;
@@ -61,21 +63,22 @@ const movies = (state = [], action) => {
     }
 }
 
+//holds ONE movie that came back from the DB
 const singleMovie = (state = [], action) => {
     switch (action.type) {
         case 'SET_DETAIL':
-            console.log(`in singleMovie reducer ${action.payload.data[0]}`);
+            // console.log(`in singleMovie reducer ${action.payload.data[0]}`);
             return action.payload.data[0]; 
         default:
             return state;
     }
 }
 
-// Used to store the movie genres
+// Stores any/all movie genres for ONE clicked movie
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
-            console.log('in genres reducer', action.payload.data);
+            // console.log('in genres reducer', action.payload.data);
             return action.payload.data;
         default:
             return state;

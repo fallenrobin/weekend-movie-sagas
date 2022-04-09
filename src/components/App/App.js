@@ -6,7 +6,7 @@ import MovieDetail from '../MovieDetail/MovieDetail'
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      <h1 className="header">The Cinematic Saga of Redux-Saga</h1>
       <Router>
         <Route path="/" exact>
           <MovieList />
