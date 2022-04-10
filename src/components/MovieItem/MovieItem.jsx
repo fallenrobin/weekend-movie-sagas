@@ -10,15 +10,15 @@ import CardContent from '@material-ui/core/CardContent';
 //grid for centering
 import Grid from '@material-ui/core/Grid';
 
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             '& > *': {
                 margin: theme.spacing(1),
             },
-            minWidth: 275,//card
-            maxWidth: 400,
-            height: 625
+            maxWidth: 375,
+            height: 475,
         },
     }),
 );
@@ -32,35 +32,30 @@ function MovieItem({ movie }) {
 
     const handleDetailView = () => {
         console.log('clicked into HandleDetailView');
-        dispatch({ type: 'FETCH_DETAIL', payload: movie.id })
-        history.push('/details');
+        dispatch({ type: 'FETCH_DETAIL', payload: movie.id })//will trigger fetchDetail saga
+        history.push('/details');//'moves' user to page view with movie details
     }
 
     return (
-        
+        //each card created as the .map loops thru array of movies in MovieList
         <>
-            <Grid item xs={2}>
+            <Grid
+                item md={2}
+            >
                 <Card className={classes.root} variant="outlined">
                     <CardContent>
-                        <Typography>
+                        {/* <Typography>
                         <p key={movie.id} >
                         <h2>{movie.title}</h2></p>
 
-                        </Typography>
-
-                    </CardContent>
-
-
-                    <CardActions style={{ justifyContent: 'center' }}>
-
-                    
-                        <img onClick={handleDetailView}
+                        </Typography> (looks better without the title)*/}
+                        <img key={movie.id} onClick={handleDetailView}
                             src={movie.poster} alt={movie.title} />
-                    
-                </CardActions>
-            </Card>
-        </Grid>
-       </>
+                    </CardContent>
+                    {/* card doesn't benefit from CardAction section */}
+                </Card>
+            </Grid>
+        </>
     )
 }
 

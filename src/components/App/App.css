@@ -32,7 +32,7 @@
     #A7489B 83.333%);
   
   /* Set the background size and repeat properties. */
-  background-size: 15%;
+  background-size: 25%;
   background-repeat: repeat;
   
   /* Use the text as a mask for the background. */
@@ -46,7 +46,7 @@
 
 /* Add animation on hover. */
 .header:hover {
-  animation: rainbow-text-animation 5s ease forwards;
+  animation: rainbow-text-animation 10s ease forwards;
 }
 
 /* Move the background and make it larger. */
@@ -70,7 +70,7 @@
 /* Animation shown when entering the page and after the hover animation. */
 @keyframes rainbow-text-animation-rev {
   0% {
-    background-size: 50%;
+    background-size: 30%;
     background-position: -9em 1em;
   }
   20% {
