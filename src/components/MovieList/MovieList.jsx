@@ -11,7 +11,7 @@ function MovieList() {
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
 
-    useEffect(() => {
+    useEffect(() => {//triggers saga getting all movies from DB on page load
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
@@ -27,7 +27,7 @@ function MovieList() {
                     justify="flex-start"
                     style={{ minHeight: '100vh' }}>
                     {movies.map((movie, i) => {
-                        return (
+                        return ( //loops thru array of movies to create each movie card
                             <MovieItem
                                 id={i}
                                 movie={movie}

@@ -56,7 +56,7 @@ function MovieDetail() {
                                     <p className="descriptionText">{singleMovie.description}</p>
                                 </Typography>
                                 <p>Genres: </p>
-                                {genres.map((genre, i) => {
+                                {genres.map((genre, i) => {//maps thru array of genres in reducer
                                     return (
                                         <GenreItem
                                             id={i}
@@ -65,7 +65,9 @@ function MovieDetail() {
                                 })}
 
                             </div>
-                            <Button style={{width:'15%'}} variant="outlined" color="primary" onClick={() => { history.push('/') }}>Return to list</Button>
+                            <Button style={{width:'15%'}} variant="outlined" color="primary" 
+                            onClick={() => { history.push('/') }}>Return to list</Button>
+                            {/* button returns user to movie list; subtle so as not to detract visually from movie*/}
                         </CardContent>
                     </Card>
                 </Grid>

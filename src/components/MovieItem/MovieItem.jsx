@@ -9,8 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 //grid for centering
 import Grid from '@material-ui/core/Grid';
-import { color } from '@mui/system';
-import { grey } from '@material-ui/core/colors';
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -20,9 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
             },
             maxWidth: 375,
             height: 475,
-            color: grey
         },
-
     }),
 );
 
@@ -35,12 +32,12 @@ function MovieItem({ movie }) {
 
     const handleDetailView = () => {
         console.log('clicked into HandleDetailView');
-        dispatch({ type: 'FETCH_DETAIL', payload: movie.id })
-        history.push('/details');
+        dispatch({ type: 'FETCH_DETAIL', payload: movie.id })//will trigger fetchDetail saga
+        history.push('/details');//'moves' user to page view with movie details
     }
 
     return (
-
+        //each card created as the .map loops thru array of movies in MovieList
         <>
             <Grid
                 item md={2}
@@ -51,18 +48,11 @@ function MovieItem({ movie }) {
                         <p key={movie.id} >
                         <h2>{movie.title}</h2></p>
 
-                        </Typography> */}
-
-                    </CardContent>
-
-
-                    <CardActions style={{ justifyContent: 'center' }}>
-
-
+                        </Typography> (looks better without the title)*/}
                         <img key={movie.id} onClick={handleDetailView}
                             src={movie.poster} alt={movie.title} />
-
-                    </CardActions>
+                    </CardContent>
+                    {/* card doesn't benefit from CardAction section */}
                 </Card>
             </Grid>
         </>
