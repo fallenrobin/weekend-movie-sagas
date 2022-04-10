@@ -43,7 +43,7 @@ function MovieItem({ movie }) {
 
         <>
             <Grid
-                item xs={2}
+                item md={2}
             >
                 <Card className={classes.root} variant="outlined">
                     <CardContent>

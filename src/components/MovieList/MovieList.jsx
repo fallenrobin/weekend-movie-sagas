@@ -21,7 +21,7 @@ function MovieList() {
             <section className="movies">
                 <Grid
                     container
-                    spacing={3}
+                    spacing={2}
                     direction="row"
                     alignItems="flex-start"
                     justify="flex-start"

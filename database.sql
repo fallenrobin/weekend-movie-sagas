@@ -26,7 +26,7 @@ CREATE TABLE "movies_genres" (
 
 --------[ DATA! ]---------
 
--- starter movies
+-- starter movies (SEE BELOW FOR MY CUSTOM MOVIES)
 INSERT INTO "movies" ("title", "poster", "description")
 VALUES 
 ('Avatar', 'images/avatar.jpeg', 'Avatar (marketed as James Cameron''s Avatar) is a 2009 American epic science fiction film directed, written, produced, and co-edited by James Cameron, and stars Sam Worthington, Zoe Saldana, Stephen Lang, Michelle Rodriguez, and Sigourney Weaver. The film is set in the mid-22nd century, when humans are colonizing Pandora, a lush habitable moon of a gas giant in the Alpha Centauri star system, in order to mine the mineral unobtanium, a room-temperature superconductor. The expansion of the mining colony threatens the continued existence of a local tribe of Na''vi – a humanoid species indigenous to Pandora. The film''s title refers to a genetically engineered Na''vi body operated from the brain of a remotely located human that is used to interact with the natives of Pandora.'),
@@ -44,7 +44,7 @@ VALUES
 ('Titanic', 'images/titanic.jpg', 'Titanic is a 1997 American epic romance and disaster film directed, written, co-produced, and co-edited by James Cameron. A fictionalized account of the sinking of the RMS Titanic, it stars Leonardo DiCaprio and Kate Winslet as members of different social classes who fall in love aboard the ship during its ill-fated maiden voyage.'),
 ('Toy Story', 'images/toy-story.jpg', 'Toy Story is a 1995 American computer-animated adventure comedy film produced by Pixar Animation Studios and released by Walt Disney Pictures. The feature-film directorial debut of John Lasseter, it was the first feature-length film to be entirely computer-animated, as well as the first feature film from Pixar. The screenplay was written by Joss Whedon, Andrew Stanton, Joel Cohen, and Alec Sokolow from a story by Lasseter, Stanton, Pete Docter, and Joe Ranft. The film features music by Randy Newman, and was executive-produced by Steve Jobs and Edwin Catmull. The film features the voices of Tom Hanks, Tim Allen, Don Rickles, Wallace Shawn, John Ratzenberger, Jim Varney, Annie Potts, R. Lee Ermey, John Morris, Laurie Metcalf, and Erik von Detten. Taking place in a world where anthropomorphic toys come to life when humans are not present, its plot focuses on the relationship between an old-fashioned pull-string cowboy doll named Woody and an astronaut action figure, Buzz Lightyear, as they evolve from rivals competing for the affections of their owner Andy Davis to friends who work together to be reunited with him after being separated.');
 
--- starter genres
+-- starter genres (SEE BELOW FOR MY CUSTOM MOVIES)
 INSERT INTO "genres" ("name")
 VALUES 
 ('Adventure'),
@@ -56,10 +56,10 @@ VALUES
 ('Epic'),
 ('Fantasy'),
 ('Musical'),
-('Romantic'),         --10
+('Heist'),            --10 CUSTOM
 ('Science Fiction'),  --11
-('Space-Opera'),      --12
-('Superhero');        --13
+('Thriller'),         --12 CUSTOM
+('Action');           --13 CUSTOM
 
 
 -- starter movies and genres data
@@ -79,3 +79,39 @@ VALUES
 (12,8), (12,9),           -- Social Net
 (13,4), (13,10), (13,6),  -- Titanic
 (14,3), (14,2), (14,4);   -- Toy Story
+
+
+--for my custom movies
+INSERT INTO "movies" ("title", "poster", "description")
+VALUES
+('Oceans 11', 'images/oceans.png', 'Danny Ocean gathers a group of his World War II compatriots to pull off the ultimate Las Vegas heist. Together the eleven friends plan to rob five Las Vegas casinos in one night.'),
+('The Bourne Identity', 'images/bourne.png', 'A man is picked up by a fishing boat, bullet-riddled and suffering from amnesia, before racing to elude assassins and attempting to regain his memory.'),
+('Back to the Future', 'images/BTTF.png', 'Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.'),
+('Alien', 'images/alien.png', 'The crew of a commercial spacecraft encounter a deadly lifeform after investigating an unknown transmission.'),
+('Die Hard', 'images/dieHard.png', 'An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.'),
+('Jurassic Park', 'images/jurassicPark.png', 'A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the cloned dinosaurs of the park to run loose.'),
+('The Godfather', 'images/padrino.png', 'The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.'),
+('Raiders of the Lost Ark', 'images/raiders.png', 'In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before the Nazis can obtain its awesome powers.'),
+('The Road Warrior', 'images/roadWarrior.png', 'In the post-apocalyptic Australian wasteland, a cynical drifter agrees to help a small, gasoline-rich community escape a horde of bandits.'),
+('Star Wars', 'images/starWars.png', 'Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the world-destroying battle station of the Empire, while also attempting to rescue Princess Leia from the mysterious Darth Vader.'),
+('Terminator', 'images/terminator.png', 'A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to the future salvation of humanity.'),
+('2 Fast 2 Furious', 'images/2F2F.png', 'Former cop Brian O`Conner is called upon to bust a dangerous criminal and he recruits the help of a former childhood friend and street racer who has a chance to redeem himself.')
+;
+
+--for my custom movies
+INSERT INTO "movies_genres" ("movie_id", "genre_id")
+VALUES 
+(1,10),                    -- Oceans 11
+(2,6), (2,12), (2,13),     -- Bourne
+(3,4), (3,11), (3,13),     -- BTTF
+(4,11),(4,12),(4,13),      -- Alien
+(5,13),                    -- Die Hard
+(6,13),(6,1),(6,5),(6,11), -- Jurassic
+(7,6),                     -- Godfather
+(8,1),(8,13),              -- Raiders
+(9,13),                    -- Road Warrior
+(10,1),(10,11), (10,13),   -- Star Wars
+(11,13), (11,11),          -- Terminator
+(12,13)                    -- 2F2F
+;
+
