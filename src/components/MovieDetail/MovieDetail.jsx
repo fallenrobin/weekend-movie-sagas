@@ -65,7 +65,7 @@ function MovieDetail() {
                                 })}
 
                             </div>
-                            <Button style={{width:'15%', height:'10%', fontWeight: 'bold'}} variant="contained" onClick={() => { history.push('/') }}>Return to list</Button>
+                            <Button style={{width:'15%'}} variant="outlined" color="primary" onClick={() => { history.push('/') }}>Return to list</Button>
                         </CardContent>
                     </Card>
                 </Grid>
