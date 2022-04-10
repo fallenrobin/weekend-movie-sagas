@@ -42,7 +42,7 @@ function MovieDetail() {
                 alignItems="center"
                 justify="center"
             >
-                <Grid item xs={8}>
+                <Grid item xs={4}>
                     <Card className={ClassNames.root} variant="outlined">
                         <CardContent>
 

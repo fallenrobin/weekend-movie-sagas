@@ -7,15 +7,17 @@ body {
 }
 
 .detailImg {
-  width: 30em;
-  height: 42em;
+  outline: 1px solid black;
+  box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+  size-adjust: 40%;
 }
 
 .descriptionText {
   width: 80%;
 }
 
-img {
+.listImg {
   outline: 1px solid black;
   box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+  size-adjust: 90%;
 }
