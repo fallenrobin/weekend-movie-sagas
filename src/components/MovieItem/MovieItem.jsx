@@ -9,6 +9,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 //grid for centering
 import Grid from '@material-ui/core/Grid';
+import { color } from '@mui/system';
+import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -16,10 +18,11 @@ const useStyles = makeStyles((theme: Theme) =>
             '& > *': {
                 margin: theme.spacing(1),
             },
-            minWidth: 275,//card
-            maxWidth: 400,
-            height: 625
+            maxWidth: 375,
+            height: 475,
+            color: grey
         },
+
     }),
 );
 
@@ -37,30 +40,32 @@ function MovieItem({ movie }) {
     }
 
     return (
-        
+
         <>
-            <Grid item xs={2}>
+            <Grid
+                item xs={2}
+            >
                 <Card className={classes.root} variant="outlined">
                     <CardContent>
-                        <Typography>
+                        {/* <Typography>
                         <p key={movie.id} >
                         <h2>{movie.title}</h2></p>
 
-                        </Typography>
+                        </Typography> */}
 
                     </CardContent>
 
 
                     <CardActions style={{ justifyContent: 'center' }}>
 
-                    
-                        <img onClick={handleDetailView}
+
+                        <img key={movie.id} onClick={handleDetailView}
                             src={movie.poster} alt={movie.title} />
-                    
-                </CardActions>
-            </Card>
-        </Grid>
-       </>
+
+                    </CardActions>
+                </Card>
+            </Grid>
+        </>
     )
 }
 
