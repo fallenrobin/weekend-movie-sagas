@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-function MovieItem({ movie, id }) {
+function MovieItem({ movie}) {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -34,7 +34,7 @@ function MovieItem({ movie, id }) {
     const handleDetailView = () => {
         console.log('clicked into HandleDetailView');
         dispatch({ type: 'FETCH_DETAIL', payload: movie.id })//will trigger fetchDetail saga
-        history.push('/details');//'moves' user to page view with movie details
+        history.push(`/details/${movie.id}`);//'moves' user to page view with movie details
     }
 
     return (
@@ -50,7 +50,7 @@ function MovieItem({ movie, id }) {
                         <h2>{movie.title}</h2></p>
 
                         </Typography> (looks better without the title)*/}
-                        <img className="listImg" key={id} onClick={handleDetailView}
+                        <img className="listImg" key={movie.id} onClick={handleDetailView}
                             src={movie.poster} alt={movie.title} />
                     </CardContent>
                     {/* card doesn't benefit from CardAction section */}
