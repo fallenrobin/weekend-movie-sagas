@@ -44,7 +44,7 @@ VALUES
 ('Titanic', 'images/titanic.jpg', 'Titanic is a 1997 American epic romance and disaster film directed, written, co-produced, and co-edited by James Cameron. A fictionalized account of the sinking of the RMS Titanic, it stars Leonardo DiCaprio and Kate Winslet as members of different social classes who fall in love aboard the ship during its ill-fated maiden voyage.'),
 ('Toy Story', 'images/toy-story.jpg', 'Toy Story is a 1995 American computer-animated adventure comedy film produced by Pixar Animation Studios and released by Walt Disney Pictures. The feature-film directorial debut of John Lasseter, it was the first feature-length film to be entirely computer-animated, as well as the first feature film from Pixar. The screenplay was written by Joss Whedon, Andrew Stanton, Joel Cohen, and Alec Sokolow from a story by Lasseter, Stanton, Pete Docter, and Joe Ranft. The film features music by Randy Newman, and was executive-produced by Steve Jobs and Edwin Catmull. The film features the voices of Tom Hanks, Tim Allen, Don Rickles, Wallace Shawn, John Ratzenberger, Jim Varney, Annie Potts, R. Lee Ermey, John Morris, Laurie Metcalf, and Erik von Detten. Taking place in a world where anthropomorphic toys come to life when humans are not present, its plot focuses on the relationship between an old-fashioned pull-string cowboy doll named Woody and an astronaut action figure, Buzz Lightyear, as they evolve from rivals competing for the affections of their owner Andy Davis to friends who work together to be reunited with him after being separated.');
 
--- starter genres (SEE BELOW FOR MY CUSTOM MOVIES)
+-- genres (MODIFIED WITH CUSTOM GENRES)
 INSERT INTO "genres" ("name")
 VALUES 
 ('Adventure'),
@@ -62,7 +62,8 @@ VALUES
 ('Action');           --13 CUSTOM
 
 
--- starter movies and genres data
+-- starter movies and genres data... 
+-- does not fully correspond if starter movies are inserted!
 INSERT INTO "movies_genres" ("movie_id", "genre_id")
 VALUES 
 (1,1), (1,3), (1,4),      -- Avatar
@@ -81,7 +82,7 @@ VALUES
 (14,3), (14,2), (14,4);   -- Toy Story
 
 
---for my custom movies
+--CUSTOM MOVIES
 INSERT INTO "movies" ("title", "poster", "description")
 VALUES
 ('Oceans 11', 'images/oceans.png', 'Danny Ocean gathers a group of his World War II compatriots to pull off the ultimate Las Vegas heist. Together the eleven friends plan to rob five Las Vegas casinos in one night.'),
@@ -98,7 +99,7 @@ VALUES
 ('2 Fast 2 Furious', 'images/2F2F.png', 'Former cop Brian O`Conner is called upon to bust a dangerous criminal and he recruits the help of a former childhood friend and street racer who has a chance to redeem himself.')
 ;
 
---for my custom movies
+--CUSTOM MOVIE GENRES
 INSERT INTO "movies_genres" ("movie_id", "genre_id")
 VALUES 
 (1,10),                    -- Oceans 11
