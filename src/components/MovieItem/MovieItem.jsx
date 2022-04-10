@@ -23,11 +23,12 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-function MovieItem({ movie }) {
+function MovieItem({ movie, id }) {
 
     const dispatch = useDispatch();
     const history = useHistory();
     const classes = useStyles(); //for card
+
 
 
     const handleDetailView = () => {
@@ -49,7 +50,7 @@ function MovieItem({ movie }) {
                         <h2>{movie.title}</h2></p>
 
                         </Typography> (looks better without the title)*/}
-                        <img className="listImg" key={movie.id} onClick={handleDetailView}
+                        <img className="listImg" key={id} onClick={handleDetailView}
                             src={movie.poster} alt={movie.title} />
                     </CardContent>
                     {/* card doesn't benefit from CardAction section */}

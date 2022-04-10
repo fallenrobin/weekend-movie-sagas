@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import GenreItem from '../App/GenreItem/GenreItem';
 
@@ -25,11 +25,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function MovieDetail() {
 
-    const singleMovie = (useSelector(store => store.singleMovie))
+    const movie = (useSelector(store => store.singleMovie))
     const genres = (useSelector(store => store.genres))
     const history = useHistory();
+    // const {movie.id} = useParams(); doesn't like the dot
 
-    console.log('in details page', singleMovie);
+    console.log('in details page', movie);
 
 
     return (
@@ -46,27 +47,26 @@ function MovieDetail() {
                     <Card className={ClassNames.root} variant="outlined">
                         <CardContent>
 
-                            <div key={singleMovie.id} >
+                            <div key={movie.id} >
                                 <Typography variant="h4">
-                                    <h3>{singleMovie.title}</h3>
+                                    <h3>{movie.title}</h3>
                                 </Typography >
-                                <img className="detailImg" src={singleMovie.poster} alt={singleMovie.title} />
+                                <img className="detailImg" src={movie.poster} alt={movie.title} />
 
                                 <Typography variant="h5">
-                                    <p className="descriptionText">{singleMovie.description}</p>
+                                    <p className="descriptionText">{movie.description}</p>
                                 </Typography>
                                 <p>Genres: </p>
-                                {genres.map((genre, i) => {//maps thru array of genres in reducer
+                                {genres.map((genre) => {//maps thru array of genres in reducer
                                     return (
                                         <GenreItem
-                                            id={i}
                                             genre={genre}
                                         />);
                                 })}
 
                             </div>
-                            <Button style={{width:'15%'}} variant="outlined" color="primary" 
-                            onClick={() => { history.push('/') }}>Return to list</Button>
+                            <Button style={{ width: '15%' }} variant="outlined" color="primary"
+                                onClick={() => { history.push('/') }}>Return to list</Button>
                             {/* button returns user to movie list; subtle so as not to detract visually from movie*/}
                         </CardContent>
                     </Card>

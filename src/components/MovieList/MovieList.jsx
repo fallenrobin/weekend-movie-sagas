@@ -26,10 +26,9 @@ function MovieList() {
                     alignItems="flex-start"
                     justify="flex-start"
                     style={{ minHeight: '100vh' }}>
-                    {movies.map((movie, i) => {
+                    {movies.map((movie) => {
                         return ( //loops thru array of movies to create each movie card
                             <MovieItem
-                                id={i}
                                 movie={movie}
                             />);
                     })}

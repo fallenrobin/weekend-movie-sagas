@@ -16,7 +16,6 @@ function App() {
           <MovieDetail />
         </Route>
 
-
         {/* Stretch: Add Movie page */}
       </Router>
     </div>
