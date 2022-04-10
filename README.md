@@ -6,4 +6,7 @@
 
 Your project description goes here. What problem did you solve? How did you solve it?
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Screenshots
+
+![Movie List View](public/images/listView.png?raw=true "Movie List View")
+![Movie Detail View](public/images/detail.png?raw=true "Movie Detail View")
