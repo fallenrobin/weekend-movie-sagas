@@ -1,5 +1,6 @@
 import { HashRouter as Router, Route, Link, useHistory, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import GenreItem from '../App/GenreItem/GenreItem';
 
 //MUI for card
@@ -28,7 +29,15 @@ function MovieDetail() {
     const movie = (useSelector(store => store.singleMovie))
     const genres = (useSelector(store => store.genres))
     const history = useHistory();
-    // const {movie.id} = useParams(); doesn't like the dot
+    const {id} = useParams(); 
+    const dispatch = useDispatch();
+
+    useEffect(() => {//triggers saga getting all movies from DB on page load
+        dispatch({ 
+            type: 'FETCH_DETAIL', 
+            payload: id
+        });
+    }, []);
 
     console.log('in details page', movie);
 
@@ -47,7 +56,7 @@ function MovieDetail() {
                     <Card className={ClassNames.root} variant="outlined">
                         <CardContent>
 
-                            <div key={movie.id} >
+                            <div key={id} >
                                 <Typography variant="h4">
                                     <h3>{movie.title}</h3>
                                 </Typography >

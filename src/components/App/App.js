@@ -12,11 +12,10 @@ function App() {
           <MovieList />
         </Route>
 
-        <Route path="/details">
-          <MovieDetail />
+        <Route path="/details/:id" 
+        children={<MovieDetail />}>
         </Route>
 
-        {/* Stretch: Add Movie page */}
       </Router>
     </div>
   );
