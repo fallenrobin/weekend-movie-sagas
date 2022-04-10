@@ -1,6 +1,8 @@
-import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import GenreItem from '../App/GenreItem/GenreItem';
+import React from 'react';
+
 
 //MUI for card
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
@@ -26,10 +28,21 @@ const useStyles = makeStyles((theme: Theme) =>
 function MovieDetail() {
 
     const singleMovie = (useSelector(store => store.singleMovie))
+    // const { id } = useParams();
     const genres = (useSelector(store => store.genres))
     const history = useHistory();
 
     console.log('in details page', singleMovie);
+
+    const [user, setUser] = React.useState(null)
+    const { movieId } = useParams()
+
+    /*React.useEffect(() => {
+        fetch(`localhost:3000/details/${singleMovie.id}`)
+            .then(setUser)
+    }, movieId)*/
+    // error : MovieDetail.jsx:41 Fetch API cannot load 
+    // localhost:3000/details/undefined. URL scheme "localhost" is not supported.
 
 
     return (
@@ -65,8 +78,8 @@ function MovieDetail() {
                                 })}
 
                             </div>
-                            <Button style={{width:'15%'}} variant="outlined" color="primary" 
-                            onClick={() => { history.push('/') }}>Return to list</Button>
+                            <Button style={{ width: '15%' }} variant="outlined" color="primary"
+                                onClick={() => { history.push('/') }}>Return to list</Button>
                             {/* button returns user to movie list; subtle so as not to detract visually from movie*/}
                         </CardContent>
                     </Card>

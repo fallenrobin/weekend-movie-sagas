@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail'
@@ -16,6 +16,9 @@ function App() {
           <MovieDetail />
         </Route>
 
+        {/* <Route path="/:id">
+          <MovieDetail />
+        </Route> */}
 
         {/* Stretch: Add Movie page */}
       </Router>
