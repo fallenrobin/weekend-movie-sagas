@@ -21,11 +21,11 @@ The challenge here was mainly to practice our new skills of routing dispatches t
 
 - I managed to move the reducers and sagas into their own folders, though it can probably be done even more elegantly.
 
+- Working with a classmate, we figured out how to implement useParams to maintain the MovieDetail view on page refresh 
+
 ###Things I would like to have done / plan to learn:###
 
 - Implement useMediaQuery in the future for responsiveness... the MovieDetail view is pretty gnarly on mobile right now
-
-- Implement React useParams to maintain detail view on page refresh 
 
 
 ## Screenshots
