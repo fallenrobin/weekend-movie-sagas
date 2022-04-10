@@ -37,7 +37,7 @@ The challenge here was mainly to practice our new skills of routing dispatches t
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
-- [Postico] (https://eggerapps.at/postico/)
+- [Postico](https://eggerapps.at/postico/)
 
 ## Installation
 
