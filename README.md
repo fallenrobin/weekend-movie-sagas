@@ -13,7 +13,7 @@ This project had us put together most of the skills we've been learning for the 
 The challenge here was mainly to practice our new skills of routing dispatches to their own sagas, which in turn sent requests to separate routers, whose results in turn were sent to separate reducers. I didn't have a terribly hard time reaching base functionality (ie clicking on a poster in list view to pull up a detail view of the movie), but I did have to tinker a bit with accessing the correct data in the response. I suspect my requests could be formatted a bit differently to mitigate that issue.
  
 
-###Things I'm really happy with:###
+### Things I'm really happy with: ###
 
 - The overall style turned out great! I love the font animation, and the MUI cards look nice and clean which allows the posters to pop with a subtle box shadow.
 
@@ -23,7 +23,7 @@ The challenge here was mainly to practice our new skills of routing dispatches t
 
 - Working with a classmate, we figured out how to implement useParams to maintain the MovieDetail view on page refresh 
 
-###Things I would like to have done / plan to learn:###
+### Things I would like to have done / plan to learn: ###
 
 - Implement useMediaQuery in the future for responsiveness... the MovieDetail view is pretty gnarly on mobile right now
 
