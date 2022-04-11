@@ -17,7 +17,7 @@ The challenge here was mainly to practice our new skills of routing dispatches t
 
 - The overall style turned out great! I love the font animation, and the MUI cards look nice and clean which allows the posters to pop with a subtle box shadow.
 
-- My custom movie posters/data 🤓 This was tedious but 100% worth it!
+- My custom movie posters/data: this was tedious but 100% worth it! And yup, all the movies shown represent multi-film franchises, i.e. sagas 🤓
 
 - I managed to move the reducers and sagas into their own folders, though it can probably be done even more elegantly.
 
