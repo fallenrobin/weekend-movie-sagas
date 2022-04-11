@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
 
   const query = `
   SELECT * FROM "movies"
-  WHERE "id" = $1
+  WHERE "id" = $1; 
   `;
 
   pool.query(query, [req.params.id])
