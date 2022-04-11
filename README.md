@@ -50,8 +50,6 @@ The challenge here was mainly to practice our new skills of routing dispatches t
 
 ## Built With
 
-## Built With
-
 - React
 - Redux
 - Redux-Saga
