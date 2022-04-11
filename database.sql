@@ -96,7 +96,7 @@ VALUES
 ('The Road Warrior', 'images/roadWarrior.png', 'In the post-apocalyptic Australian wasteland, a cynical drifter agrees to help a small, gasoline-rich community escape a horde of bandits.'),
 ('Star Wars', 'images/starWars.png', 'Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the world-destroying battle station of the Empire, while also attempting to rescue Princess Leia from the mysterious Darth Vader.'),
 ('Terminator', 'images/terminator.png', 'A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to the future salvation of humanity.'),
-('2 Fast 2 Furious', 'images/2F2F.png', 'Former cop Brian O`Conner is called upon to bust a dangerous criminal and he recruits the help of a former childhood friend and street racer who has a chance to redeem himself.')
+('2 Fast 2 Furious', 'images/TFTF.png', 'Former cop Brian O`Conner is called upon to bust a dangerous criminal and he recruits the help of a former childhood friend and street racer who has a chance to redeem himself.')
 ;
 
 --CUSTOM MOVIE GENRES
