@@ -30,7 +30,7 @@ The challenge here was mainly to practice our new skills of routing dispatches t
 
 ## Screenshots
 
-![Movie List View](public/images/listView.png?raw=true "Movie List View")
+![Movie List View](public/images/finalLayout.png?raw=true "Movie List View")
 ![Movie Detail View](public/images/detail.png?raw=true "Movie Detail View")
 
 
