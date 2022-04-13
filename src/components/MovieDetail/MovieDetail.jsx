@@ -52,8 +52,8 @@ function MovieDetail() {
                 alignItems="center"
                 justify="center"
             >
-                <Grid item xs={4}>
-                    <Card className={ClassNames.root} variant="outlined">
+                {/* <Grid item xs={4}> */}
+                    <Card style={{minWidth: 300, maxWidth: 450}} variant="outlined">
                         <CardContent>
 
                             <div key={id} >
@@ -79,7 +79,7 @@ function MovieDetail() {
                             {/* button returns user to movie list; subtle so as not to detract visually from movie*/}
                         </CardContent>
                     </Card>
-                </Grid>
+                {/* </Grid> */}
             </Grid>
         </>
 

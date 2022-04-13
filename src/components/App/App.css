@@ -37,8 +37,10 @@
   
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent; 
+  color: transparent;
   /* Animate the text when loading the element. */
   /* This animates it on page load and when hovering out. */
   animation: rainbow-text-animation-rev 10s ease forwards;

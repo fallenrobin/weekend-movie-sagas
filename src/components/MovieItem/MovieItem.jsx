@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 margin: theme.spacing(1),
             },
             maxWidth: 375,
-            height: 475,
+            // height: 400
+            minHeight: 200,
+            maxHeight: 400
         },
     }),
 );
